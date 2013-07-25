@@ -14,7 +14,7 @@ Build a basic service that responds to a POST to /quotes, with the following req
 
     {
       "quote": {
-    	  "pickup_postcode": "SW1A 1AA",
+        "pickup_postcode": "SW1A 1AA",
         "delivery_postcode": "EC2A 3LT",
       }
     }
