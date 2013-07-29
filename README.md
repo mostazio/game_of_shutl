@@ -32,7 +32,7 @@ And responds with the following price:
     }
 
 
-## Feature Two - Variable Prices By Distance
+## Feature Two - Variable Prices By Distance - DONE
 
 The price we charge depends on the distance between two postcodes. We won't implement postcode geocoding here, so instead let's use a basic formula for working out the price for a quote between two postcodes. The process is to take the base-36 integer of each postcode, substract the delivery postcode from the pickup postcode and then divide by 1000. If the result is negative, turn it into a positive.
 

@@ -1,7 +1,6 @@
 require 'spec_helper'
-require 'json'
 
-describe 'Feature One - Basic Service' do
+describe 'Basic Service' do
   let(:request) do
     {
       quote: {
@@ -12,7 +11,6 @@ describe 'Feature One - Basic Service' do
   end
 
   it 'responds to POST /quotes with a JSON response and a static price' do
-
     post '/quotes', request, {'Content-Type' => 'application/json'}
 
     last_response.should be_ok

@@ -1,6 +1,7 @@
 require 'rack/test'
 require 'sinatra'
 require 'pry'
+require 'json'
 
 require_relative '../lib/server'
 

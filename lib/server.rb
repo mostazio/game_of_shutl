@@ -6,11 +6,13 @@ module GameOfShutl
     post '/quotes' do
       quote = JSON.parse(params['quote'])
 
+      price = ((quote['pickup_postcode'].to_i(36) - quote['delivery_postcode'].to_i(36)) / 1000).abs
+
       {
         quote: {
           pickup_postcode: quote['pickup_postcode'],
           delivery_postcode: quote['delivery_postcode'],
-          price: 679
+          price: price
         }
       }.to_json
     end
