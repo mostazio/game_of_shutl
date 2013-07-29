@@ -2,13 +2,15 @@
 
 For our tech test, we'd like you to implement a stripped-down version of our quoting engine, and then add some features. This is a RESTful service endpoint that takes a few details and works out the price for a delivery.
 
-Throughout the test we're looking for great ruby style, driving your code through tests (and refactoring) and at all times doing the bare minimum possible to get the job done. Please don't spend more than 90 minutes on the test - it's fine not to complete all the features - just make sure that the features you do complete are done to a standard that you're happy with. Please complete the features in order.
+Throughout the test we're looking for great ruby style, driving your code through tests (and refactoring) and at all times doing the bare minimum possible to get the job done. If you don't like the code that's there already, feel free to refactor as you add features.
+
+Please don't spend more than 90 minutes on the test - it's fine not to complete all the features - just make sure that the features you do complete are done to a standard that you're happy with. Please complete the features in order.
 
 To submit, fork our repo and add 'samsworldofno' as a collaborator. Bonus points for committing along the way and highlighting in your commit logs when a given feature was completed.
 
 On the name: Our old tech test was the [game of life](http://en.wikipedia.org/wiki/Conway's_Game_of_Life) - but the Game of Shutl is much more interesting :)
 
-## Feature One - Basic Service
+## Feature One - Basic Service - DONE
 
 Build a basic service that responds to a POST to /quotes, with the following request structure:
 

@@ -1,9 +1,13 @@
 require 'rack/test'
+require 'sinatra'
+require 'pry'
 
-def app
-  Sinatra::Application
-end
+require_relative '../lib/server'
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
+end
+
+def app
+  GameOfShutl::Server
 end
