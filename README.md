@@ -48,14 +48,23 @@ Update your service to calculate pricing based upon these rules.
 
 ## Pending Features
 
-### Variable Prices By Vehicle
+### Simple Variable Prices By Vehicle
 
 Our price changes based upon the vehicle. Implement a "vehicle" attribute on the request, that takes one of the following values, applying the appropriate markup:
 
 * bicycle: 10%
 * parcel_car: 20%
+* small_van: 30%
 
 The vehicle should also be returned in the response.
+
+### Vehicle Price Limits
+
+Each vehicle has a limit in the distance it can travel, which is reflected in the price. Update your logic so that each vehicle has an upper price limit, after which the next vehicle is selected:
+
+* bicycle: 500
+* parcel_car: 1000
+* small_van: no limit
 
 ### Simple Volumetrics
 
@@ -84,6 +93,7 @@ The service should then calculate the smallest possible vehicle which could be u
 
 * bicycle: Weight 3kg, Capacity: L30 x W25 x H10 cm
 * parcel_car: Weight: 50kg Max. Capacity: L100 x W100 x H75 cm
+* small_van: Weight: 400kg Max. Capacity: L133 x W133 x H133 cm
 
 Don't worry about working out the vehicle if there are multiple products - assume there will always be only one.
 
