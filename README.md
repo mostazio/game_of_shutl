@@ -1,6 +1,6 @@
 # Game of Shutl
 
-For our tech test, we'd like you to implement a stripped-down version of our quoting engine, and then add some features. This is a RESTful service endpoint that takes a few details and works out the price for a delivery.
+For our tech test, we'd like you to take stripped-down version of our quoting engine, and then add some features. This is a RESTful service endpoint that takes a few details and works out the price for a delivery.
 
 Throughout the test we're looking for great ruby style, driving your code through tests (and refactoring) and at all times doing the bare minimum possible to get the job done. If you don't like the code that's there already, feel free to refactor as you add features.
 
