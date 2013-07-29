@@ -57,12 +57,6 @@ Our price changes based upon the vehicle. Implement a "vehicle" attribute on the
 
 The vehicle should also be returned in the response.
 
-### Vehicle Becomes Vehicle_Id
-
-A change in requirements has come up - that vehicle is renamed vehicle_id.
-
-In order to not break existing clients, you and the team have decided to add a header which will allow the client to specify the version of the API they want to use. Update your service to allow a header to be passed in, and to accept/show different the correct attribute depending on the version.
-
 ### Simple Volumetrics
 
 Another feature of Shutl is that if the vehicle is not specifed, we calculate what vehicle is required based upon the volumetrics (weights and dimensions) of the product.
@@ -96,3 +90,11 @@ Don't worry about working out the vehicle if there are multiple products - assum
 ### Complex Volumetrics
 
 ... assume no longer. Update your calculation that decides which vehicle should be used to deal with multiple products. You can assume that the volumetrics are simply to be summed together.
+
+## Icebox
+
+### Vehicle Becomes Vehicle_Id
+
+A change in requirements has come up - that vehicle is renamed vehicle_id.
+
+In order to not break existing clients, you and the team have decided to add a header which will allow the client to specify the version of the API they want to use. Update your service to allow a header to be passed in, and to accept/show different the correct attribute depending on the version.
