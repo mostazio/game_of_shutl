@@ -11,7 +11,7 @@ describe 'Basic Service' do
   end
 
   it 'responds to POST /quotes with a JSON response and a static price' do
-    post '/quotes', request, {'Content-Type' => 'application/json'}
+    post '/quotes', request
 
     last_response.should be_ok
 

@@ -9,7 +9,7 @@ describe 'Variable pricing by distance' do
       }.to_json
     }
 
-    post '/quotes', request, {'Content-Type' => 'application/json'}
+    post '/quotes', request
     expect(JSON.parse(last_response.body)['quote']['price']).to eql 679
 
     request =  {
@@ -19,7 +19,7 @@ describe 'Variable pricing by distance' do
       }.to_json
     }
 
-    post '/quotes', request, {'Content-Type' => 'application/json'}
+    post '/quotes', request
 
     quote = JSON.parse(last_response.body)['quote']
     expect(JSON.parse(last_response.body)['quote']['price']).to eql 656
