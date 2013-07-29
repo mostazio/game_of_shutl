@@ -14,7 +14,7 @@ Build a basic service that responds to a POST to /quotes, with the following req
 
     {
       "quote": {
-        "pickup_postcode": "SW1A 1AA",
+        "pickup_postcode":   "SW1A 1AA",
         "delivery_postcode": "EC2A 3LT",
       }
     }
@@ -23,9 +23,9 @@ And responds with the following price:
 
     {
       "quote": {
-        "pickup_postcode": "SW1A 1AA",
+        "pickup_postcode":   "SW1A 1AA",
         "delivery_postcode": "EC2A 3LT",
-        "price": 679
+        "price":             679
       }
     }
 
@@ -65,7 +65,7 @@ Update the service to accept an array of products, each of which is a hash, ie:
 
     {
       "quote": {
-        "pickup_postcode": "SW1A 1AA",
+        "pickup_postcode":   "SW1A 1AA",
         "delivery_postcode": "EC2A 3LT",
         "products" : [
           {
