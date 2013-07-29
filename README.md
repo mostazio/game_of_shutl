@@ -1,14 +1,18 @@
 # Game of Shutl
 
-For our tech test, we'd like you to implement a stripped-down version of our quoting engine, and then add some features. This is a RESTful service endpoint that takes a few details and works out the price for a delivery.
+For our tech test, we'd like you to take stripped-down version of our quoting engine, and then add some features. This is a RESTful service endpoint that takes a few details and works out the price for a delivery.
 
-Throughout the test we're looking for great ruby style, driving your code through tests (and refactoring) and at all times doing the bare minimum possible to get the job done. Please don't spend more than 90 minutes on the test - it's fine not to complete all the features - just make sure that the features you do complete are done to a standard that you're happy with. Please complete the features in order.
+Throughout the test we're looking for great ruby style, driving your code through tests (and refactoring) and at all times doing the bare minimum possible to get the job done. If you don't like the code that's there already, feel free to refactor as you add features.
+
+Please don't spend more than 90 minutes on the test - it's fine not to complete all the features - just make sure that the features you do complete are done to a standard that you're happy with. Please complete the features in order.
 
 To submit, fork our repo and add 'samsworldofno' as a collaborator. Bonus points for committing along the way and highlighting in your commit logs when a given feature was completed.
 
 On the name: Our old tech test was the [game of life](http://en.wikipedia.org/wiki/Conway's_Game_of_Life) - but the Game of Shutl is much more interesting :)
 
-## Feature One - Basic Service
+## Completed Features
+
+### Basic Service
 
 Build a basic service that responds to a POST to /quotes, with the following request structure:
 
@@ -30,7 +34,7 @@ And responds with the following price:
     }
 
 
-## Feature Two - Variable Prices By Distance
+### Variable Prices By Distance
 
 The price we charge depends on the distance between two postcodes. We won't implement postcode geocoding here, so instead let's use a basic formula for working out the price for a quote between two postcodes. The process is to take the base-36 integer of each postcode, substract the delivery postcode from the pickup postcode and then divide by 1000. If the result is negative, turn it into a positive.
 
@@ -42,7 +46,9 @@ If you have a better idea for a deterministic way of making a number from two po
 
 Update your service to calculate pricing based upon these rules.
 
-## Feature Three - Variable Prices By Vehicle
+## Pending Features
+
+### Variable Prices By Vehicle
 
 Our price changes based upon the vehicle. Implement a "vehicle" attribute on the request, that takes one of the following values, applying the appropriate markup:
 
@@ -51,13 +57,13 @@ Our price changes based upon the vehicle. Implement a "vehicle" attribute on the
 
 The vehicle should also be returned in the response.
 
-## Feature Four - Vehicle Becomes Vehicle_Id
+### Vehicle Becomes Vehicle_Id
 
 A change in requirements has come up - that vehicle is renamed vehicle_id.
 
 In order to not break existing clients, you and the team have decided to add a header which will allow the client to specify the version of the API they want to use. Update your service to allow a header to be passed in, and to accept/show different the correct attribute depending on the version.
 
-## Feature Five - Simple Volumetrics
+### Simple Volumetrics
 
 Another feature of Shutl is that if the vehicle is not specifed, we calculate what vehicle is required based upon the volumetrics (weights and dimensions) of the product.
 
@@ -87,9 +93,6 @@ The service should then calculate the smallest possible vehicle which could be u
 
 Don't worry about working out the vehicle if there are multiple products - assume there will always be only one.
 
-## Feature Six - Complex Volumetrics
+### Complex Volumetrics
 
 ... assume no longer. Update your calculation that decides which vehicle should be used to deal with multiple products. You can assume that the volumetrics are simply to be summed together.
-
-
-And you're done!
