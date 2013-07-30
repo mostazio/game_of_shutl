@@ -53,8 +53,10 @@ Update your service to calculate pricing based upon these rules.
 Our price changes based upon the vehicle. Implement a "vehicle" attribute on the request, that takes one of the following values, applying the appropriate markup:
 
 * bicycle: 10%
+* motorbike: 15%
 * parcel_car: 20%
 * small_van: 30%
+* large_van: 40%
 
 The vehicle should also be returned in the response.
 
@@ -63,8 +65,10 @@ The vehicle should also be returned in the response.
 Each vehicle has a limit in the distance it can travel, which is reflected in the price. Update your logic so that each vehicle has an upper price limit, after which the next vehicle is selected:
 
 * bicycle: 500
+* motorbike: 750
 * parcel_car: 1000
-* small_van: no limit
+* small_van: 1500
+* large_van: no limit
 
 ### Simple Volumetrics
 
@@ -92,8 +96,10 @@ Weight is specified in kilograms, dimensions in centimetres.
 The service should then calculate the smallest possible vehicle which could be used for this job. The vehicle capacities are:
 
 * bicycle: Weight 3kg, Capacity: L30 x W25 x H10 cm
+* motorbike: Weight: 6kg Max. Capacity: L35 x W25 x H25 cm
 * parcel_car: Weight: 50kg Max. Capacity: L100 x W100 x H75 cm
 * small_van: Weight: 400kg Max. Capacity: L133 x W133 x H133 cm
+* large_van: unlimited
 
 Don't worry about working out the vehicle if there are multiple products - assume there will always be only one.
 
