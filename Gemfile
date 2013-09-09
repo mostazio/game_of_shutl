@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'license_finder'
+group :development do
+  gem 'license_finder'
+end
+
 gem 'sinatra'
 
 group :test do
