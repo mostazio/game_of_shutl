@@ -13,8 +13,8 @@ describe 'Variable pricing by vehicle' do
     post '/quotes', request
     quote = JSON.parse(last_response.body)['quote']
 
-    expect(quote['price']).to eql "746.90"
-    expect(quote['vehicle']).to eql "bicycle"
+    expect(quote['price']).to eql "780.85"
+    expect(quote['vehicle']).to eql "motorbike"
 
     request =  {
       quote: {

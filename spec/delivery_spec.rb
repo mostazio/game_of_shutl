@@ -25,14 +25,14 @@ describe Delivery do
     end
   end
 
-  describe "#price" do
+  describe "#format_price" do
     it "returns the delivery price" do
-      subject.price.should == 679
+      subject.format_price.should == "780.85"
     end
   end
 
   describe "#to_json" do
-    let(:json) { { quote: properties.merge(price: subject.price) }.to_json }
+    let(:json) { { quote: properties.merge(price: subject.format_price, vehicle: subject.vehicle) }.to_json }
 
     it "returns a json representation of the quote" do
       subject.to_json.should == json

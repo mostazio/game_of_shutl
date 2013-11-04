@@ -13,10 +13,16 @@ class Delivery
     end if properties.is_a? Hash
 
     @vehicle = Vehicle.find vehicle if vehicle
+
+    @vehicle = Vehicle.find_for_distance(distance) unless @vehicle && @vehicle.can_deliver?(self)
+  end
+
+  def distance
+    ((pickup_postcode.to_i(36) - delivery_postcode.to_i(36)) / 1000).abs
   end
 
   def price
-    @price = ((pickup_postcode.to_i(36) - delivery_postcode.to_i(36)) / 1000).abs
+    @price = distance
     @price = @price * vehicle.value if vehicle
 
     @price

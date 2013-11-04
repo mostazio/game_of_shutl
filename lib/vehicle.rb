@@ -38,7 +38,21 @@ class Vehicle
     Vehicle.new(vehicle.merge(name: vehicle_name))
   end
 
+  def self.find_for_distance distance
+    #in a real world application this would probably make a query to a database, something like:
+    # in mysql: SELECT * FROM vehicles WHERE distance_limit >= ? ORDER BY distance_limit LIMIT 1;
+    # in active record: Vehicle.where("distance_limit >= ?", limit).order(:distance_limit).first
+
+    VEHICLES.each_pair do |name, values|
+      return Vehicle.find name if values[:limit].nil? || values[:limit] > distance
+    end
+  end
+
+  def can_deliver? delivery
+    limit >= delivery.distance || limit.nil?
+  end
+
   def to_s
-    name
+    name.to_s
   end
 end
