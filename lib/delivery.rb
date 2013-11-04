@@ -1,12 +1,4 @@
 class Delivery
-  VEHICLES = {
-    "bicycle"    =>  1.10,
-    "motorbike"  =>  1.15,
-    "parcel_car" =>  1.20,
-    "small_van"  =>  1.30,
-    "large_van"  =>  1.40
-  }
-
   ACCEPTED_PARAMETERS = [
     :pickup_postcode,
     :delivery_postcode,
@@ -19,11 +11,13 @@ class Delivery
     properties.each do |k,v|
     instance_variable_set "@#{k}", v if ACCEPTED_PARAMETERS.include? k.to_sym
     end if properties.is_a? Hash
+
+    @vehicle = Vehicle.find vehicle if vehicle
   end
 
   def price
     @price = ((pickup_postcode.to_i(36) - delivery_postcode.to_i(36)) / 1000).abs
-    @price = @price * VEHICLES[vehicle] if vehicle
+    @price = @price * vehicle.value if vehicle
 
     @price
   end
@@ -32,7 +26,7 @@ class Delivery
     (price.is_a? Fixnum) ? price : sprintf("%0.02f", price)
   end
 
-  def to_s
+  def to_json
     {
       quote: {
         pickup_postcode: pickup_postcode,

@@ -31,11 +31,11 @@ describe Delivery do
     end
   end
 
-  describe "#to_s" do
+  describe "#to_json" do
     let(:json) { { quote: properties.merge(price: subject.price) }.to_json }
 
     it "returns a json representation of the quote" do
-      subject.to_s.should == json
+      subject.to_json.should == json
     end
   end
 end

@@ -8,7 +8,7 @@ module GameOfShutl
 
       delivery = Delivery.new(quote)
 
-      delivery
+      delivery.to_json
     end
   end
 end
