@@ -25,13 +25,28 @@ describe Vehicle do
   describe "can_deliver?" do
     context "when passing a deliver object" do
       context "when the delivery distance is less than the limit" do
-        it "returns true" do
-          delivery = double("Delivery")
-          delivery.stub(:distance).and_return(Vehicle::VEHICLES[:bicycle][:limit] - 10)
+        context "and it can fit the product" do
+          it "returns true" do
+            delivery = double("Delivery")
+            delivery.stub(:distance).and_return(Vehicle::VEHICLES[:bicycle][:limit] - 10)
+            delivery.stub(:products).and_return([{ "weight" => 2, "length" => 25, "width" => 20, "height" => 5 }])
 
-          vehicle = Vehicle.find :bicycle
+            vehicle = Vehicle.find :bicycle
 
-          vehicle.can_deliver?(delivery).should be_true
+            vehicle.can_deliver?(delivery).should be_true
+          end
+        end
+
+        context "and it can't fit the product" do
+          it "returns false" do
+            delivery = double("Delivery")
+            delivery.stub(:distance).and_return(Vehicle::VEHICLES[:bicycle][:limit] - 10)
+            delivery.stub(:products).and_return([{ "weight" => 4, "length" => 45, "width" => 20, "height" => 5 }])
+
+            vehicle = Vehicle.find :bicycle
+
+            vehicle.can_deliver?(delivery).should be_false
+          end
         end
       end
 

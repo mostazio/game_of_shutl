@@ -2,7 +2,8 @@ class Delivery
   ACCEPTED_PARAMETERS = [
     :pickup_postcode,
     :delivery_postcode,
-    :vehicle
+    :vehicle,
+    :products
   ]
 
   attr_reader *ACCEPTED_PARAMETERS
@@ -14,7 +15,7 @@ class Delivery
 
     @vehicle = Vehicle.find vehicle if vehicle
 
-    @vehicle = Vehicle.find_for_distance(distance) unless @vehicle && @vehicle.can_deliver?(self)
+    @vehicle = Vehicle.find_for_delivery(self) unless @vehicle && @vehicle.can_deliver?(self)
   end
 
   def distance
